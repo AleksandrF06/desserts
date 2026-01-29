@@ -79,7 +79,7 @@ body {
 }
 
 .page {
-    width: var(--page-width);
+    max-width: var(--page-width);
     height: var(--page-height);
     background-color: var(--rose-50);
     box-sizing: border-box;
@@ -87,18 +87,19 @@ body {
 }
 
 .mainContent {
-    width: var(--mainContent-width);
+    max-width: var(--mainContent-width);
     height: var(--mainContent-height);
     display: flex;
     flex-direction: row;
-    gap: var(--row-gap);
+    justify-content: space-between;
 }
 .mainContent__productList {
-    width: var(--productList-width);
+    width: 100%;
+    max-width: var(--productList-width);
     height: var(--productList-height);
     display: flex;
     flex-direction: column;
-    gap: var(--productList-gap)
+    gap: var(--productList-gap);
 }
 
 .productList__title {
@@ -108,39 +109,42 @@ body {
     font-weight: var(--text-preset-1-weight);
 }
 .productList__List {
-    width: var(--List-width);
+    width: 100%;
     height: var(--List-height);
     display: flex;
     flex-direction: column;
-    gap: var(--row-gap);
+    justify-content: space-between;
 }
 
 .List__itemRow {
     display: flex;
     flex-direction: row;
-    gap: var(--column-gap);
-    width: var(--itemRow-width);
+    justify-content: space-between;
+    width: 100%;
     height: var(--itemRow-height);
 }
 .List__item {
-    width: var(--card-width);
+    max-width: var(--card-width);
     height: var(--card-height);
     display: flex;
     flex-direction: column;
     gap: var(--card-gap);
 }
 .List__item-image{
-    width: var(--item-image-width);
+    flex-shrink: 1;
+    max-width: var(--item-image-width);
     height: var(--item-image-height);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .List__food-pic {
-    width: var(--food-pic-width);
+    flex-shrink: 1;
+    max-width: var(--food-pic-width);
     height: var(--food-pic-height);
 }
 .List__button-add {
+    flex-shrink: 1;
     border: 1px solid var(--rose-400);
     border-radius: 999px;
     min-width: var(--button-add-width);
@@ -159,7 +163,7 @@ body {
 
 .List__shopping-cart{
     color: var(--red);
-    width: var(--shopping-cart-width);
+    max-width: var(--shopping-cart-width);
     height: var(--shopping-cart-height);
 }
 .List__button-text{
@@ -168,7 +172,7 @@ body {
     font-weight: var(--text-preset-5-weight);
 }
 .List__item-info {
-    width: var(--item-info-width);
+    max-width: var(--item-info-width);
     height: var(--item-info-height);
     display: flex;
     flex-direction: column;
@@ -196,7 +200,7 @@ body {
 .mainContent__Cart {
     background-color: var(--white);
     border-radius: 12px;
-    width: var(--cart-width);
+    max-width: var(--cart-width);
     height: var(--cart-height);
     box-sizing: border-box;
     padding: var(--cart-padding);
@@ -211,7 +215,7 @@ body {
     line-height: var(--text-preset-2-height);
 }
 .Cart__placeholder {
-    width: var(--cart-placeholder-width);
+    max-width: var(--cart-placeholder-width);
     height: var(--cart-placeholder-height);
     display: flex;
     flex-direction: column;
@@ -221,7 +225,7 @@ body {
     background-color: var(--white);
 }
 .Cart__element-of-order {
-    width: var(--element-of-order-width);
+    max-width: var(--element-of-order-width);
     min-height: var(--element-of-order-height);
     display: flex;
     flex-direction: row;
@@ -268,7 +272,7 @@ color: var(--rose-400);
 }
 
 .Cart__neutral-info {
-    width: var(--neutral-info-width);
+    max-width: var(--neutral-info-width);
     height: var(--neutral-info-heigth);
     box-sizing: border-box;
     padding: var(--neutral-info-padding);
@@ -402,3 +406,158 @@ color: var(--rose-400);
 .ei--plus:active {
   color: var(--white);
 }
+
+
+
+
+@media (max-width: 1385px) {
+    .page{
+        max-width: 768px;
+        height: 1755px;
+        padding: 40px;
+        box-sizing: border-box;
+    } 
+    .mainContent {
+        flex-direction: column;
+        gap: 32px;
+        max-width: 688px;
+        height: 1675px;
+    }
+    .mainContent__productList {
+        max-width: 688px;
+        height: 1101px;
+    }
+    .productList__List {
+        max-width: 688px;
+        height: 1021px;
+    }
+    .List__itemRow {
+        flex-shrink: 1;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .List__item {
+        flex-shrink: 1;
+        max-width: 213.33px;
+        max-height: 319px;
+    }
+    .List__item-image {
+        flex-shrink: 1;
+        max-width: 213.33px;
+        max-height: 234px;
+    }
+    .List__food-pic {
+        flex-shrink: 1;
+        max-height: 212px;
+        max-width: 213.33px;
+    }
+    .List__button-add {
+        flex-shrink: 1;
+        max-width: var(--button-add-width);
+        max-height: var(--button-add-height);
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .mainContent__Cart {
+        max-width: 688px;
+        height: 542px;
+    }
+    .Cart__placeholder {
+        max-width: 100%;
+    }
+    .Cart__neutral-info {
+        max-width: 640px;
+    }
+    .Cart__cart-button-text {
+        width: 640px;
+        max-width: 640px;
+    }
+    .Cart__element-of-order {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 745px) {
+    .page{
+        max-width: 375px;
+        height: 3765px;
+        padding: 24px;
+        box-sizing: border-box;
+    } 
+    .mainContent {
+        gap: 32px;
+        max-width: 327px;
+        height: 3717px;
+    }
+    .mainContent__productList {
+        max-width: 100%;
+        height: 3143px;
+    }
+    .productList__List {
+        max-width: 327px;
+        height: 3063px;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .List__itemRow {
+        width: 327px;
+        height: 1029px;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .List__item {
+        min-width: 100%;
+        height: 319px;
+    }
+    .List__item-image {
+        min-width: 100%;
+        height: 234px;
+    }
+    .List__food-pic {
+        min-height: 212px;
+        min-width: 100%;
+    }
+    .List__button-add {
+        width: var(--button-add-width);
+        height: var(--button-add-height);
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .mainContent__Cart {
+        width: 100%;
+        height: 542px;
+    }
+    .Cart__placeholder {
+        width: 100%;
+    }
+    .Cart__neutral-info {
+        width: 279px;
+    }
+    .Cart__cart-button-text {
+        width: 279px;
+    }
+    .Cart__element-of-order {
+        max-width: 100%;
+    }
+}
+
